@@ -2,9 +2,9 @@
 
 const cal = require('./calculator');
 
-describe('add Operator', () =>{  // Arrange
+describe('add Operator', () =>{ // Arrange
 
-    test('adds 1 + 1 equals 2', () =>{
+    test('adds 1 + 1 equals 2', () =>{ // Arrange
         var value = cal.add(1,1); // Act
         expect(value).toBe(2); // Assert
     });
