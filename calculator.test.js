@@ -1,8 +1,8 @@
 // AAA Pattern
 
-const cal = require('./calculator'); // Arrange
+const cal = require('./calculator');
 
-describe('add Operator', () =>{
+describe('add Operator', () =>{  // Arrange
 
     test('adds 1 + 1 equals 2', () =>{
         var value = cal.add(1,1); // Act
