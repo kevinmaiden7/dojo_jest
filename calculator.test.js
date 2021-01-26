@@ -15,7 +15,7 @@ describe('add Operator', () =>{ // Arrange
     });
 });
 
-describe('subtract Operator', () =>{
+describe('subtraction Operator', () =>{
     
     test('subtracts 2 - 1 equals 1', () =>{
         var value = cal.subtract(2,1);
