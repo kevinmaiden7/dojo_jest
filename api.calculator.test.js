@@ -26,7 +26,7 @@ describe("testing /add path", () => {
 
     test("it should return status code 200", done => {
         request(app)
-        .get("/add?a=1?b=1")
+        .get("/add?a=1&b=1")
         .then(response => {
             expect(response.statusCode).toBe(200);
             done();
@@ -35,7 +35,7 @@ describe("testing /add path", () => {
 
     test("it should return application/json content-type", done => {
         request(app)
-        .get("/add?a=1?b=1")
+        .get("/add?a=1&b=1")
         .then(response => {
             expect(response.type).toBe("application/json");
             done();
@@ -44,7 +44,7 @@ describe("testing /add path", () => {
 
     test("it should return a valid json object", done => {
         request(app)
-        .get("/add?a=1?b=1")
+        .get("/add?a=1&b=1")
         .then(response => {
             expect(response.body).not.toBeNull();
             expect(response.body.result).not.toBeUndefined();
@@ -66,7 +66,7 @@ describe("testing /subtract path", () => {
 
     test("it should return status code 200", done => {
         request(app)
-        .get("/subtract?a=1?b=1")
+        .get("/subtract?a=1&b=1")
         .then(response => {
             expect(response.statusCode).toBe(200);
             done();
@@ -75,7 +75,7 @@ describe("testing /subtract path", () => {
 
     test("it should return application/json content-type", done => {
         request(app)
-        .get("/subtract?a=1?b=1")
+        .get("/subtract?a=1&b=1")
         .then(response => {
             expect(response.type).toBe("application/json");
             done();
@@ -84,7 +84,7 @@ describe("testing /subtract path", () => {
 
     test("it should return a valid json object", done => {
         request(app)
-        .get("/subtract?a=1?b=1")
+        .get("/subtract?a=1&b=1")
         .then(response => {
             expect(response.body).not.toBeNull();
             expect(response.body.result).toBeDefined();
