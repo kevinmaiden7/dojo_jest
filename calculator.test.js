@@ -27,3 +27,16 @@ describe('subtraction Operator', () =>{
         expect(value).toBe(3);
     });
 });
+
+describe('multiplication Operator', () =>{
+    
+    test('multiply 2 * 1 equals 2', () =>{
+        var value = cal.mult(2,1);
+        expect(value).toBe(2);
+    });
+    
+    test('multiply 5 * 2 equals 10', () =>{
+        var value = cal.mult(5,2);
+        expect(value).toBe(10);
+    });
+});

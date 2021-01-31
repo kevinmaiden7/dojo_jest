@@ -23,4 +23,12 @@ app.get("/subtract", (req, res) =>{
     });
 });
 
+app.get("/mult", (req, res) =>{
+    var a = parseInt(req.query.a);
+    var b = parseInt(req.query.b);
+    res.json({
+        result: calculator.mult(a, b)
+    });
+});
+
 module.exports = app;
