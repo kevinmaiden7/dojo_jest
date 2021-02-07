@@ -40,3 +40,16 @@ describe('multiplication Operator', () =>{
         expect(value).toBe(10);
     });
 });
+
+describe('division Operator', () =>{
+    
+    test('divide 2 / 1 equals 2', () =>{
+        var value = cal.div(2,1);
+        expect(value).toBe(2);
+    });
+    
+    test('divide 5 / 2 equals 2.5', () =>{
+        var value = cal.div(5,2);
+        expect(value).toBe(2.5);
+    });
+});
