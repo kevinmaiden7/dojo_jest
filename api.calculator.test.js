@@ -66,7 +66,7 @@ describe("testing /subtract path", () => {
 
     test("it should return status code 200", done => {
         request(app)
-        .get("/subtract?a=1&b=1")
+        .get("/sub?a=1&b=1")
         .then(response => {
             expect(response.statusCode).toBe(200);
             done();
@@ -75,7 +75,7 @@ describe("testing /subtract path", () => {
 
     test("it should return application/json content-type", done => {
         request(app)
-        .get("/subtract?a=1&b=1")
+        .get("/sub?a=1&b=1")
         .then(response => {
             expect(response.type).toBe("application/json");
             done();
@@ -84,7 +84,7 @@ describe("testing /subtract path", () => {
 
     test("it should return a valid json object", done => {
         request(app)
-        .get("/subtract?a=1&b=1")
+        .get("/sub?a=1&b=1")
         .then(response => {
             expect(response.body).not.toBeNull();
             expect(response.body.result).toBeDefined();
@@ -94,7 +94,7 @@ describe("testing /subtract path", () => {
 
     test("it should return a correct answer", done => {
         request(app)
-        .get("/subtract?a=6&b=4")
+        .get("/sub?a=6&b=4")
         .then(response => {
             expect(response.body.result).toBe(2);
             done();
