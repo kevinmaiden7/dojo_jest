@@ -15,7 +15,7 @@ app.get("/add", (req, res) =>{
 });
 
 
-app.get("/subtract", (req, res) =>{
+app.get("/sub", (req, res) =>{
     var a = parseInt(req.query.a);
     var b = parseInt(req.query.b);
     res.json({
@@ -28,6 +28,14 @@ app.get("/mult", (req, res) =>{
     var b = parseInt(req.query.b);
     res.json({
         result: calculator.mult(a, b)
+    });
+});
+
+app.get("/div", (req, res) =>{
+    var a = parseInt(req.query.a);
+    var b = parseInt(req.query.b);
+    res.json({
+        result: calculator.div(a, b)
     });
 });
 

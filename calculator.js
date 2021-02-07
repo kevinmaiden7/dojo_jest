@@ -10,6 +10,11 @@ function  mult(a, b){
     return a * b;
 }
 
+function  div(a, b){
+    return a / b;
+}
+
 module.exports.add = add;
 module.exports.subtract = subtract;
 module.exports.mult = mult;
+module.exports.div = div;
