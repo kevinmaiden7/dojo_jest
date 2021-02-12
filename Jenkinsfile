@@ -1,5 +1,3 @@
-Jenkinsfile (Declarative Pipeline)
-
 pipeline {
 
   agent any
@@ -7,20 +5,13 @@ pipeline {
   tools {nodejs "node"}
     
   stages {
-        
-    stage('Git') {
-      steps {
-        git 'https://github.com/kevinmaiden7/jest_dojo'
-      }
-    }
      
-    stage('Build') {
+    stage('Setup') {
       steps {
         sh 'npm --version'
         sh 'npm install'
       }
     }  
-    
             
     stage('Test') {
       steps {
