@@ -28,7 +28,7 @@ pipeline {
      
     stage('Setup') {
       steps {
-        sh 'npm --version'
+        sh 'node --version'
         sh 'npm install'
       }
     }  
@@ -60,7 +60,7 @@ pipeline {
   post {
 
     always{
-      echo "The pipeline has been executed for ${APP_NAME}, version ${params.version}."
+      echo "The pipeline has been executed for ${APP_NAME}, version ${params.version}"
     }
     success{
       echo 'Build status: OK'
