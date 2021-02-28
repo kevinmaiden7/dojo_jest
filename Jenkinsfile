@@ -9,7 +9,7 @@ pipeline {
   }
     
   parameters {
-    string(name: 'version', defaultValue: '1.0.0', description: 'App version')
+    string(name: 'version', defaultValue: '1.0.1', description: 'Pipeline version')
     booleanParam(name: 'executeTests', defaultValue: true, description: 'Flag variable to execute tests')
   }
 
@@ -35,9 +35,7 @@ pipeline {
             
     stage('Test') {
       when {
-        expression {
-          params.executeTests == true
-        }
+        expression { params.executeTests }
       }
       steps {
         sh 'npm test'
@@ -46,12 +44,12 @@ pipeline {
 
     stage('Extra: prod confirmation'){
       when {
-        expression {
-          BRANCH_NAME == 'master'
-        }
+        expression { env.BRANCH_NAME == 'master' }
       }
       steps {
-        echo 'Pipeline ran for master branch.'
+        echo "Pipeline ran for master branch."
+        input(message="Confirm actions on production environment")
+        echo "Actions on production confirmed!"
       }
     }
     
@@ -60,7 +58,9 @@ pipeline {
   post {
 
     always{
-      echo "The pipeline has been executed for ${APP_NAME}, version ${params.version}"
+      echo "The pipeline has been executed for ${APP_NAME}"
+      echo "Pipeline version ${params.version}"
+      cleanWs()
     }
     success{
       echo 'Build status: OK'
